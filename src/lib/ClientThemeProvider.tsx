@@ -5,9 +5,9 @@ import { setTheme, Theme } from "@/store/slices/themeSlice";
 
 export default function ClientThemeProvider({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Readonly<{
+    children: React.ReactNode;
+}>) {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function ClientThemeProvider({
       ? (storedTheme.toLowerCase() as Theme)
       : Theme.System;
 
-    document.documentElement.setAttribute("data-theme", theme);
+    document.documentElement.dataset.theme = theme;
     dispatch(setTheme(theme));
   }, [dispatch]);
 

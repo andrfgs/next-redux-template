@@ -8,9 +8,9 @@ import { store } from "@/store";
  */
 
 interface StoreProviderProps {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
-export function StoreProvider({ children }: StoreProviderProps) {
-    return <Provider store={store}>{children}</Provider>;
+export function StoreProvider({ children }: Readonly<StoreProviderProps>) {
+  return <Provider store={store}>{children}</Provider>;
 }

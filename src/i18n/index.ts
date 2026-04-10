@@ -28,7 +28,7 @@ const languageMap: {
 };
 
 export const SUPPORTED_LANGUAGES: Language[] = Object.keys(languageMap)
-  .sort()
+  .sort((a, b) => a.localeCompare(b))
   .reverse() as Language[];
 export const DEFAULT_LANGUAGE: Language = Language.English;
 export const DEFAULT_TIMEZONE = "Europe/Brussels";

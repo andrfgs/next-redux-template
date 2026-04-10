@@ -13,10 +13,10 @@ import { setCurrentLanguage } from "@/store/slices/languageSlice";
 export default function LanguageProvider({
   children,
   locale,
-}: {
+}: Readonly<{
   children: React.ReactNode;
   locale: string;
-}) {
+}>) {
   const currentLanguage = useAppSelector(
     (store) => store.language.currentLanguage,
   );
